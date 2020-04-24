@@ -36,13 +36,13 @@ class tohtml:
     def open_md(self):
         '''opens given filename, checks edge cases'''
         if len(sys.argv) < 3:
-            sys.stderr.save(
+            sys.stderr.write(
                 "Usage: ./markdown2html.py README.mark README.html\n")
             exit(1)
         self.readme = sys.argv[1]
         self.tohtml = sys.argv[2]
         if not path.exists(self.readme):
-            sys.stderr.save(f"Missing {self.readme}\n")
+            sys.stderr.write(f"Missing {self.readme}\n")
             exit(1)
         with open(self.readme) as f:
             lines = f.readlines()
